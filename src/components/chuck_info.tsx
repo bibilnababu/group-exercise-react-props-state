@@ -1,4 +1,5 @@
-const ChuckInfo = () => {
+
+
 
 	// 💡 Note that this component, like the <ChuckCard />, uses an "explicit return"
 	// Compare this to <ChuckJoke/> which just returns the JSX directly like this:
@@ -12,16 +13,20 @@ const ChuckInfo = () => {
 	// If you don't have any particular need to write TypeScript/JavaScript logic 
 	// in a component, then it's cleaner to use the implicit return style from 
 	// <ChuckJoke/> 
-
-	const someVariable = ""; // 💡 you don't need this to finish this exercise, it's just to demo that JS can go here!
-
+	interface ChuckInfo {
+		whalesSaved: number;
+		roundHouseKicks: number;
+	  }
+	const someVariable = "5"; // 💡 you don't need this to finish this exercise, it's just to demo that JS can go here!
+	 // eslint-disable-next-line @typescript-eslint/no-redeclare
+	 const ChuckInfo: React.FC<ChuckInfo> = ({ whalesSaved, roundHouseKicks }) => {
 	return (
 		<>
-			<p>Number of Whales Saved: </p>
+			<p>Number of Whales Saved:{whalesSaved} </p>
 
-			<p>Number of Round House Kicks (in the last day): </p>
-		</>);
-}
+			<p>Number of Round House Kicks (in the last day):{roundHouseKicks} </p>
+		</>)
 
+	}
 
 export default ChuckInfo;
